@@ -74,23 +74,57 @@ int findIndex(int numbers[], int size, int value)
 	
 	}
 }
-void unique(int numbers[], int size)
+//bool unique(int numbers[], int size)
+//{
+//	for (int i = 0; i < size; ++i)
+//	{
+//		for (int j = 0; i < size; ++j)
+//		{
+//			if (i != j && numbers[i] == numbers[j])
+//			{
+//				return true;
+//			}
+//		}
+//	}
+//	return false;
+//}
+void Reverse(int numbers[], int size)
 {
-	for (int i = 0; i < size; ++i)
+	for (int i = 0; i < size / 2; i++)
 	{
-		for (int j = 0; i < size; ++i)
-		{
-			if (i != j && numbers[i] == numbers[j])
-			{
-				cout << "no\n";
-			}
-			else
-			{
-				cout << "yes\n";
-			}
-		}
+		int temp = numbers[i];
+		numbers[i] = size - 1 - i;
+		numbers[size - 1 - i] = temp;
 	}
 }
+
+void sort(int numbers[], int size)
+{
+	while (true)
+	{
+		bool isSorted = true;
+			for (int i = 0; i < size - 1; ++i)
+			{
+				if (numbers[i] > numbers[i + 1])
+				{
+					int temp = numbers[i];
+					numbers[i] = numbers[i + 1];
+					numbers[i + 1] = temp;
+					isSorted = false;
+				}
+			}
+			if (isSorted)
+			{
+				break;
+			}
+	}
+ }
+void SortDes(int numbers[], int size)
+{
+	sort(numbers, size);
+	Reverse(numbers, size);
+}
+
 int main()
 {
 	int nummz[]{ 0,0,0,0,0 };
@@ -136,16 +170,30 @@ int main()
 	int byOne[4]{ 0,1,2,3 };
 	int byTwo[6]{ 2,4,8,16,32,64 };
 	int numbers1[4]{ 33,74,52,9 };
+
 	printNumbers(byTwo, 6);
 	cout << "-----------------------------------\n";
+
 	sumNumbers(byOne, 4);
 	cout << "-----------------------------------\n";
+
 	small(numbers1, 4);
 	cout << "-----------------------------------\n";
+
 	large(byOne, 4);
 	cout << "-----------------------------------\n";
+
 	cout << findIndex(byTwo, 6, 31) << "\n";
 	cout << "-----------------------------------\n";
-	unique(byTwo, 6);
+
+	/*unique(byTwo, 6);*/
+	cout << "-----------------------------------\n";
+
+	Reverse(byOne, 4);
+	cout << "-----------------------------------\n";
+
+	sort(byTwo, 6);
+	SortDes(byOne, 4);
+	cout << "-----------------------------------\n";
 	system("pause");
 }
