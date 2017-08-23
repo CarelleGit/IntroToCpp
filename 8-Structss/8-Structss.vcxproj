@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{FD2DF759-9DF9-46E9-9F8A-533DCBC7C314}</ProjectGuid>
-    <RootNamespace>My7Arrays</RootNamespace>
+    <ProjectGuid>{C2FC944C-01F1-4BF3-8B0F-24D1C27F2EDA}</ProjectGuid>
+    <RootNamespace>My8Structss</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -110,10 +110,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bank.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Person.cpp" />
+    <ClCompile Include="Students.cpp" />
+    <ClCompile Include="Vector.cpp" />
+    <ClCompile Include="Zombie.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Person.h" />
+    <ClInclude Include="Bank.h" />
+    <ClInclude Include="person.h" />
+    <ClInclude Include="Students.h" />
+    <ClInclude Include="Vector.h" />
+    <ClInclude Include="Zombie.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

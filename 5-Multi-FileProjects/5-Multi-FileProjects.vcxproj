@@ -115,12 +115,14 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="mathutils.cpp" />
     <ClCompile Include="rng.cpp" />
+    <ClCompile Include="Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dtgreet.h" />
     <ClInclude Include="Func.h" />
     <ClInclude Include="mathutils.h" />
     <ClInclude Include="rng.h" />
+    <ClInclude Include="Vector2D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
