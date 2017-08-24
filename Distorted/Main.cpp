@@ -11,13 +11,13 @@ int main()
 	char user;
 	bool Exit;
 	std::string Name;
-	
+	Clearing();
 	bool options = false;
-	cout << "                  |               Main Menu              |\n";
-	cout << "                  |                                      |\n";
-	cout << "                  | 1: Play                      2: Exit |\n";
-	cout << "                  |--------------------------------------|\n";
-	cout << "                            Enter a number only\n";
+	cout << "                     |               Main Menu              |\n";
+	cout << "                     |                                      |\n";
+	cout << "                     | 1: Play                      2: Exit |\n";
+	cout << "                     |--------------------------------------|\n";
+	cout << "                               Enter a number only\n";
 	Exit = false;
 	
 	while (Exit == false)
@@ -35,9 +35,6 @@ int main()
 			cout << "2: Not yet added\n";
 			cout << "3: Not yet added\n";
 			cout << "4: Not yet added\n";
-			cout << "Enter name";
-			nameInput(Name);
-			cout << "Name: " << Name << "\n";
 			options = true;
 			Exit = true;
 			
