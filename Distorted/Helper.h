@@ -5,4 +5,5 @@ void nameInput(std::string & UserInput);
 void Gender(std::string & UserInput);
 void Clearing();
 void pausing();
+void MainMenu();
 
