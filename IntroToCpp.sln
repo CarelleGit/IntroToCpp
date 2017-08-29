@@ -21,6 +21,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "8-Structss", "8-Structss\8-
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Distorted", "Distorted\Distorted.vcxproj", "{5DFAC187-58A5-4E10-B3EE-EDF701824239}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "10-cStrings", "10-cStrings\10-cStrings.vcxproj", "{B516AF53-6384-4898-84D8-1D730A3C6C78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -121,6 +123,16 @@ Global
 		{5DFAC187-58A5-4E10-B3EE-EDF701824239}.Release|x64.Build.0 = Release|x64
 		{5DFAC187-58A5-4E10-B3EE-EDF701824239}.Release|x86.ActiveCfg = Release|Win32
 		{5DFAC187-58A5-4E10-B3EE-EDF701824239}.Release|x86.Build.0 = Release|Win32
+		{B516AF53-6384-4898-84D8-1D730A3C6C78}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{B516AF53-6384-4898-84D8-1D730A3C6C78}.Debug|x64.ActiveCfg = Debug|x64
+		{B516AF53-6384-4898-84D8-1D730A3C6C78}.Debug|x64.Build.0 = Debug|x64
+		{B516AF53-6384-4898-84D8-1D730A3C6C78}.Debug|x86.ActiveCfg = Debug|Win32
+		{B516AF53-6384-4898-84D8-1D730A3C6C78}.Debug|x86.Build.0 = Debug|Win32
+		{B516AF53-6384-4898-84D8-1D730A3C6C78}.Release|Any CPU.ActiveCfg = Release|Win32
+		{B516AF53-6384-4898-84D8-1D730A3C6C78}.Release|x64.ActiveCfg = Release|x64
+		{B516AF53-6384-4898-84D8-1D730A3C6C78}.Release|x64.Build.0 = Release|x64
+		{B516AF53-6384-4898-84D8-1D730A3C6C78}.Release|x86.ActiveCfg = Release|Win32
+		{B516AF53-6384-4898-84D8-1D730A3C6C78}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

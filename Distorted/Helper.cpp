@@ -11,9 +11,11 @@ void nameInput(std::string & UserInput)
 	cin >> UserInput;
 }
 
-void Gender(std::string & Input)
+void Gender(std::string & Input1, std::string & Input2, std::string & Input3)
 {
-	cin >> Input;
+	cin >> Input1;
+	cin >> Input2;
+	cin >> Input3;
 }
 
 void Clearing()
@@ -61,14 +63,15 @@ void MainMenu()
 	while (Exit == false)
 	{
 		cin >> user;
-		Clearing();
+		
 		switch (user)
 		{
 		default:
 		case '3':
-			cout << "Invalid type 1 or 2\n";
+			cout << " Invalid type 1 or 2\n";
 			break;
 		case '1':
+			Clearing();
 			cout << "1: The Pheonix\n";
 			cout << "2: Not yet added\n";
 			cout << "3: Not yet added\n";
@@ -100,3 +103,4 @@ void MainMenu()
 
 
 }
+
