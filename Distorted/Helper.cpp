@@ -2,6 +2,9 @@
 #include "Stories.h"
 #include <iostream>
 #include <string>
+#include <time.h>
+#include <random>
+#include <cstdlib>
 using std::cout;
 using std::cin;
 using std::string;
@@ -16,6 +19,19 @@ void Gender(std::string & Input1, std::string & Input2, std::string & Input3)
 	cin >> Input1;
 	cin >> Input2;
 	cin >> Input3;
+}
+
+void askInput(std::string & Name, std::string & gender, std::string & gender2, std::string & gender3)
+{
+	cout << "                                 Enter name and then pronouns\n";
+	cout << "                                |++++++++++++++++++++++++++++|\n";
+	cout << "                                |Examples: she, her, herself |\n";
+	cout << "                                |           he, his, himself |\n";
+	cout << "                                |       they, their, themself|\n";
+	cout << "                                |++++++++++++++++++++++++++++|\n";
+	nameInput(Name);
+	Gender(gender, gender2, gender3);
+	cout << "\n";
 }
 
 void Clearing()
@@ -46,12 +62,10 @@ void pausing()
 
 }
 
-void MainMenu()
+void MainMenu(std::string & Name, std::string & gender, std::string & gender2, std::string & gender3)
 {
-
 	char user;
 	bool Exit;
-	std::string Name;
 	Clearing();
 	bool options = false;
 	cout << "                     |--------------|Main Menu|-------------|\n";
@@ -63,7 +77,7 @@ void MainMenu()
 	while (Exit == false)
 	{
 		cin >> user;
-		
+
 		switch (user)
 		{
 		default:
@@ -76,9 +90,9 @@ void MainMenu()
 			cout << "2: Not yet added\n";
 			cout << "3: Not yet added\n";
 			cout << "4: Not yet added\n";
+			pausing();
 			options = true;
 			Exit = true;
-
 			break;
 		case '2':
 			Exit = true;
@@ -96,11 +110,30 @@ void MainMenu()
 			cout << " Invalid -.-\n";
 			break;
 		case '1':
-			ThePhoenix();
+			askInput(Name, gender, gender2, gender3);
+			Clearing();
+			cout << "                                    Name: " << Name << "\n";
+			cout << "                                    Pronoun: " << gender << ", " << gender2 << ", " << gender3 << "\n";
+			pausing();
+			ThePhoenix(Name, gender, gender2, gender3);
+			options = false;
 			break;
 		}
 	}
 
+	
+}
 
+int diceRoll(int dice, int side)
+{
+	int Return = 0;
+	for (int i = 0; i < dice; ++i)
+	{
+		srand(time(NULL));
+		Return += rand() % side + 1;
+	}
+
+
+	return Return;
 }
 

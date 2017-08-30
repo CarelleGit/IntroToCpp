@@ -2,11 +2,18 @@
 #include <string>
 #include "Helper.h"
 #include "Stories.h"
-#include "Main.h"
 using std::cout;
 using std::cin;
 using std::string;
 int main()
 {
-	MainMenu();	
+	std::string Name;
+	std::string gender;
+	std::string gender2;
+	std::string gender3;
+	
+	MainMenu(Name, gender, gender2, gender3);
+	
+
+
 }
