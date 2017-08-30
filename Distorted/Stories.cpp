@@ -11,7 +11,7 @@ void ThePhoenix(std::string &Name, std::string &gender, std::string &gender2, st
 	bool menu = true;
 	char user;
 	Clearing();
-	//                                                                                           
+
 	cout << " ,--------.,--.             \n";
 	cout << " '--.  .--'|  ,---.  ,---.  \n";
 	cout << "    |  |   |  .-.  || .-. : \n";
@@ -53,6 +53,7 @@ void ThePhoenix(std::string &Name, std::string &gender, std::string &gender2, st
 		}
 
 	}
+
 	if (menu == false)
 	{
 		return;
@@ -85,6 +86,7 @@ void ThePhoenix(std::string &Name, std::string &gender, std::string &gender2, st
 			break;
 		}
 	}
+
 	if (menu == false)
 	{
 		return;
@@ -118,10 +120,12 @@ void ThePhoenix(std::string &Name, std::string &gender, std::string &gender2, st
 			break;
 		}
 	}
+
 	if (menu == false)
 	{
 		return;
 	}
+
 	cout << gender << " quickly grabbed " << gender2 << " stuff and then went farther into the woods to hide in a bush. " << gender << " watched as they put out the beautiful fire, sending the phoenix back into the depths of the flames.\n\t";
 	cout << Name << " stood there looking at the place the fire once was. rage filled " << gender2 << " heart when they drowned the fire with clear liquid, they did not appreciate the flames. " << Name << " looked around\n";
 	cout << "Next to the hiding spot there was a a huge tree.  " << gender << " looked at" << gender2 << "half filled container of gasoline and matches then back at the tree. " << gender << " poured the rest of the gasoline and set the tree ablaze.\n";
@@ -140,7 +144,9 @@ void ThePhoenix(std::string &Name, std::string &gender, std::string &gender2, st
 			pausing();
 			Clearing();
 			cout << Name << " ran as soon as " << gender << " heard the sound of footsteps";
+			pausing();
 			repeat(Name, gender, gender2, gender3);
+			enterStory = true;
 			break;
 		default:
 		case '3':
@@ -148,6 +154,12 @@ void ThePhoenix(std::string &Name, std::string &gender, std::string &gender2, st
 			break;
 		}
 	}
+
+	if (menu == false)
+	{
+		return;
+	}
+
 	cout << Name << " turned around, to see the locals approching the buring tree. Their eyes widen with amazment of the fire eating the tree away, until it was no longer.\n\t" << Name << " saw the people just standing there, looking at the pile of ashes";
 	cout << " in silance. After a few minutes, someone had started another fire, then another, and another. soon everyone had to move to the edge of the forest and they watched the entire forest burn. When the flames was at it hottest a huge bird with flames erupted out of the fire";
 	cout << " lighing up the night sky. Everyone cheered as they saw phoenix rise out of the flames " << Name << " noticed that time was slowing down and everything started melting away, leaving " << Name << " in a black abyss. confusion started to build, then soon was replaced by fear. ";
@@ -163,11 +175,10 @@ void ThePhoenix(std::string &Name, std::string &gender, std::string &gender2, st
 			cout << "\n";
 			break;
 		case '2':
-			Clearing();
-			battle(Name, gender, gender2, gender3);
+			Option(Name, gender, gender2, gender3);
 			pausing();
 			MainMenu(Name, gender, gender2, gender3);
-			menu == false;
+			menu = false;
 			break;
 		default:
 		case '3':
@@ -175,24 +186,31 @@ void ThePhoenix(std::string &Name, std::string &gender, std::string &gender2, st
 			break;
 		}
 	}
+
 	if (menu == false)
 	{
 		return;
 	}
+
 	cout << Name << " started running towards the light in the distance. When " << gender << " reached the bright light " << Name << " saw a bird made of fire. " << gender2 << " heart skipped with joy at the sight of the magnificent bird. The phoenix motions" << gender2 << " to climb on, so " << gender;
 	cout << " does. Once " << Name << " is settled on the back of the phoenix, the bird spreads it's wings and then takes off like bullet. Once they reach a high point in the abyss the flaming bird starts to glide. after a few hours " << gender2 << "vision went black\n\t";
 	cout << "On that May morning, " << Name << " woke up with an idea from a dream " << gender << " had\n";
 	cout << "                       | 1: back to main menu|";
 	cin >> user;
-	while (enterStory == false)
+	while (enterStory == false && menu == true)
 	{
 		switch (user)
 		{
 		default:
 		case '1':
+			menu = false;
 			MainMenu(Name, gender, gender2, gender3);
 			break;
 		}
+	}
+	if (menu == false)
+	{
+		return;
 	}
 
 }
