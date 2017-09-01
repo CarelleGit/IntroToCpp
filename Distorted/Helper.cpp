@@ -5,6 +5,7 @@
 #include <time.h>
 #include <random>
 #include <cstdlib>
+#include <windows.h>
 using std::cout;
 using std::cin;
 using std::string;
@@ -65,15 +66,14 @@ void pausing()
 void MainMenu(std::string & Name, std::string & gender, std::string & gender2, std::string & gender3)
 {
 	char user;
-	bool Exit;
+	bool Exit = false;
 	Clearing();
 	bool options = false;
-	cout << "                     |--------------|Main Menu|-------------|\n";
-	cout << "                     |                                      |\n";
-	cout << "                     | 1: Play                      2: Exit |\n";
-	cout << "                     |--------------------------------------|\n";
-	cout << "                     |--------|Enter a number only|---------|\n";
-	Exit = false;
+	DelayText(20, "                     |--------------|Main Menu|-------------|");
+	cout <<  "                     |                                      |\n";
+	DelayText(20, "                     | 1: Play                      2: Exit |");
+	DelayText(20, "                     |--------------------------------------|");
+	DelayText(20, "                     |--------|Enter a number only|---------|");
 	while (Exit == false)
 	{
 		cin >> user;
@@ -86,11 +86,10 @@ void MainMenu(std::string & Name, std::string & gender, std::string & gender2, s
 			break;
 		case '1':
 			Clearing();
-			cout << "1: The Pheonix\n";
-			cout << "2: Not yet added\n";
-			cout << "3: Not yet added\n";
-			cout << "4: Not yet added\n";
-			pausing();
+			DelayText(20, "1: The Pheonix");
+			DelayText(20, "2: Not yet added");
+			DelayText(20, "3: Not yet added");
+			DelayText(20, "4: Not yet added");
 			options = true;
 			Exit = true;
 			break;
@@ -135,5 +134,27 @@ int diceRoll(int dice, int side)
 
 
 	return Return;
+}
+
+void DelayText(int millisec, char word[])
+{
+	{
+		for (int i = 0; i < strlen(word); i++)
+		{
+			if (word[i] == '\n')
+			{
+				cout << '\n';
+			}
+			else
+			{
+				cout << word[i];
+				
+				Sleep(millisec);
+			}
+
+		}
+		cout << "\n";
+
+	}
 }
 

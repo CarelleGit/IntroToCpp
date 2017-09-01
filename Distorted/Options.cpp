@@ -28,12 +28,10 @@ void repeat(std::string & Name, std::string & gender, std::string & gender2, std
 			cout << "\n";
 			break;
 		case '2':
-			pausing();
 			Clearing();
 			cout << Name << " ran as soon as " << gender << " heard the sound of footsteps";
 			pausing();
 			repeat(Name, gender, gender2, gender3);
-			pausing();
 			enterStory = true;
 			break;
 		default:
@@ -80,8 +78,8 @@ void battle(std::string & Name, std::string & gender, std::string & gender2, std
 	if (Player.HP > 0 && Family.HP <= 0)
 	{
 		cout << Name << " has won the fight, " << gender << " decided to go back to sleep\n";
-		inProg = false;
 		pausing();
+		inProg = false;
 		if (inProg == false)
 		{
 			return;
@@ -94,36 +92,33 @@ void battle(std::string & Name, std::string & gender, std::string & gender2, std
 		cout << Name << " has lost the fight," << gender2 << " family crowded around " << gender << "\n\t" << Name << " woke up hooked up to a heart monitor and an IV bag\n";
 		pausing();
 		inProg = false;
-		MainMenu(Name, gender, gender2, gender3);
 	}
 	if (inProg == false)
 	{
 		return;
 	}
 }
-
 void Option(std::string & Name, std::string & gender, std::string & gender2, std::string & gender3)
 {
 	bool enterStory = true;
 	bool menu = true;
 	char user;
+	Clearing();
 	cout << Name << " Headed towards the light, seeing " << gender2 << " friends and family, begging for " << gender2 << " to wake up\n";
-	cout << "                          | 1: Listen|---------| 2: Fight|\n";
-	pausing();
+	DelayText(50, "                          | 1: Listen|---------| 2: Fight|\n");
 	while (enterStory == true && menu == true)
 	{
 		cin >> user;
 		switch (user)
 		{
 		case '1':
+			Clearing();
 			cout << Name << " Followed " << gender2 << " friends and family, followed until " << gender << " lost sight of them and was never able to get out of the abyss\n";
-			pausing();
 			menu = false;
 			break;
 		case '2':
 			battle(Name, gender, gender2, gender3);
-			pausing();
-			MainMenu(Name, gender, gender2, gender3);
+			menu = false;
 			break;
 		default:
 		case '3':
@@ -131,12 +126,10 @@ void Option(std::string & Name, std::string & gender, std::string & gender2, std
 			break;
 		}
 	}
-
-	/*if (menu == false)
+	if (menu = false)
 	{
 		return;
-	}*/
-
+	}
 
 }
 
