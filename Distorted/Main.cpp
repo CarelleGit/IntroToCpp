@@ -11,8 +11,10 @@ int main()
 	std::string gender;
 	std::string gender2;
 	std::string gender3;
+	std::string sibling;
+	std::string sAge;
 	
-	MainMenu(Name, gender, gender2, gender3);
+	MainMenu(Name, gender, gender2, gender3, sibling, sAge);
 	
 
 

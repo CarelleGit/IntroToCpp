@@ -35,6 +35,15 @@ void askInput(std::string & Name, std::string & gender, std::string & gender2, s
 	cout << "\n";
 }
 
+void sAskInput(std::string & Name, std::string & gender, std::string & gender2, std::string & gender3, std::string & sibling, std::string & sAge)
+{
+	askInput(Name, gender, gender2, gender3);
+	cout << "Enter brother, sister or other\n";
+	cin >> sibling;
+	cout << "Older or younger?\n";
+	cin >> sAge;
+}
+
 void Clearing()
 {
 	for (int i = 0; i < 100; i++)
@@ -63,17 +72,17 @@ void pausing()
 
 }
 
-void MainMenu(std::string & Name, std::string & gender, std::string & gender2, std::string & gender3)
+void MainMenu(std::string & Name, std::string & gender, std::string & gender2, std::string & gender3, std::string &sibling, std::string &sAge)
 {
 	char user;
 	bool Exit = false;
 	Clearing();
 	bool options = false;
-	DelayText(20, "                     |--------------|Main Menu|-------------|");
+	DelayText(10, "                     |--------------|Main Menu|-------------|");
 	cout <<  "                     |                                      |\n";
-	DelayText(20, "                     | 1: Play                      2: Exit |");
-	DelayText(20, "                     |--------------------------------------|");
-	DelayText(20, "                     |--------|Enter a number only|---------|");
+	DelayText(10, "                     | 1: Play                      2: Exit |");
+	DelayText(10, "                     |--------------------------------------|");
+	DelayText(10, "                     |--------|Enter a number only|---------|");
 	while (Exit == false)
 	{
 		cin >> user;
@@ -86,10 +95,12 @@ void MainMenu(std::string & Name, std::string & gender, std::string & gender2, s
 			break;
 		case '1':
 			Clearing();
-			DelayText(20, "1: The Pheonix");
-			DelayText(20, "2: Not yet added");
-			DelayText(20, "3: Not yet added");
-			DelayText(20, "4: Not yet added");
+			DelayText(20, "1: The Pheonix:");
+			DelayText(21, "Inspired by a dream you go out and burn a forest down, not longer after you\nare greeted by a bird made of flames");
+			cout << "------------------------\n";
+			DelayText(20, "2: Island");
+			DelayText(21, "Stranded on an island whith your family but it's okay since there is plenty of\nfood and you can hear the ocean.");
+			cout << "------------------------\n";
 			options = true;
 			Exit = true;
 			break;
@@ -111,12 +122,22 @@ void MainMenu(std::string & Name, std::string & gender, std::string & gender2, s
 		case '1':
 			askInput(Name, gender, gender2, gender3);
 			Clearing();
-			cout << "                                    Name: " << Name << "\n";
+			cout << "                                    Name   : " << Name << "\n";
 			cout << "                                    Pronoun: " << gender << ", " << gender2 << ", " << gender3 << "\n";
 			pausing();
-			ThePhoenix(Name, gender, gender2, gender3);
+			ThePhoenix(Name, gender, gender2, gender3, sibling, sAge);
 			options = false;
 			break;
+		case '2':
+			sAskInput(Name, gender, gender2, gender3, sibling, sAge);
+			Clearing();
+			cout << "                                    Name        : " << Name << "\n";
+			cout << "                                    Pronoun     : " << gender << ", " << gender2 << ", " << gender3 << "\n";
+			cout << "                                    Reletive    : " << sibling << "\n";
+			cout << "                                    Reletive Age: " << sAge << "\n";
+			pausing();
+			Island(Name, gender, gender2, gender3, sibling, sAge);
+			options = false;
 		}
 	}
 
