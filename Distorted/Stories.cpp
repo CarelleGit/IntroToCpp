@@ -8,8 +8,9 @@
 #include <MMSystem.h>
 using std::cout;
 using std::cin;
-void ThePhoenix(std::string &Name, std::string &gender, std::string &gender2, std::string &gender3, std::string &sibling, std::string &sAge)
+void ThePhoenix(std::string &Name, std::string &gender, std::string &gender2, std::string &gender3, std::string &sibling, std::string &sAge, bool &Secret, bool &Secret2)
 {
+	Secret = false;
 	bool enterStory = true;
 	bool menu = true;
 	char user;
@@ -48,7 +49,7 @@ void ThePhoenix(std::string &Name, std::string &gender, std::string &gender2, st
 			//add heart moniter sound
 			pausing();
 			
-			MainMenu(Name, gender, gender2, gender3, sibling, sAge);
+			MainMenu(Name, gender, gender2, gender3, sibling, sAge, Secret, Secret2);
 			menu = false;
 			break;
 		default:
@@ -82,7 +83,7 @@ void ThePhoenix(std::string &Name, std::string &gender, std::string &gender2, st
 			cout << "As " << Name << " ran into the forest, the surroundings started to break apart " << Name << " looked around confused until " << gender << " started to hear the sound of a heart beating\n";
 			pausing();
 			//add hear beat
-			MainMenu(Name, gender, gender2, gender3, sibling, sAge);
+			MainMenu(Name, gender, gender2, gender3, sibling, sAge, Secret, Secret2);
 			menu = false;
 			break;
 		default:
@@ -116,7 +117,7 @@ void ThePhoenix(std::string &Name, std::string &gender, std::string &gender2, st
 			cout << Name << " tried to run, but the police had caught " << gender2 << ". Once the police got a hold of " << gender2 << "time slowed down until it everything froze in place. The temperature started to rise";
 			//add fire
 			pausing();
-			MainMenu(Name, gender, gender2, gender3, sibling, sAge);
+			MainMenu(Name, gender, gender2, gender3, sibling, sAge, Secret, Secret2);
 			menu = false;
 			break;
 		default:
@@ -181,7 +182,7 @@ void ThePhoenix(std::string &Name, std::string &gender, std::string &gender2, st
 			break;
 		case '2':
 			Option(Name, gender, gender2, gender3);
-			MainMenu(Name, gender, gender2, gender3, sibling, sAge);
+			MainMenu(Name, gender, gender2, gender3, sibling, sAge, Secret, Secret2);
 			menu = false;
 			break;
 		default:
@@ -200,6 +201,7 @@ void ThePhoenix(std::string &Name, std::string &gender, std::string &gender2, st
 	cout << " does. Once " << Name << " is settled on the back of the phoenix, the bird spreads it's wings and then takes off like bullet. Once they reach a high point in the abyss the flaming bird starts to glide. after a few hours " << gender2 << "vision went black\n\t";
 	cout << "On that May morning, " << Name << " woke up with an idea from a dream " << gender << " had\n";
 	DelayText(20, "                       | 1: back to main menu|\n");
+	Secret = true;
 	cin >> user;
 	while (enterStory == false && menu == true)
 	{
@@ -208,7 +210,7 @@ void ThePhoenix(std::string &Name, std::string &gender, std::string &gender2, st
 		default:
 		case '1':
 			menu = false;
-			MainMenu(Name, gender, gender2, gender3, sibling, sAge);
+			MainMenu(Name, gender, gender2, gender3, sibling, sAge, Secret, Secret2);
 			break;
 		}
 	}
@@ -245,19 +247,20 @@ void ThePhoenix(std::string &Name, std::string &gender, std::string &gender2, st
 			 electrodiagnostic (MRI scans)
 	sounds needed: oceans with laughter and crying in the background, MRI, hospital sounds, compulsive laughter, crying
 */
-void Island(std::string & Name, std::string & gender, std::string & gender2, std::string & gender3, std::string & sibling, std::string & sAge)
+void Island(std::string & Name, std::string & gender, std::string & gender2, std::string & gender3, std::string & sibling, std::string & sAge, bool &Secret, bool &Secret2)
 {
+	Secret2 = false;
 	bool enterStory = true;
 	bool menu = true;
 	char user;
 	Clearing();
-	DelayText(10, "::::::::::: ::::::::  :::            :::     ::::    ::: :::::::::");
-	DelayText(10, "    :+:    :+:    :+: :+:          :+: :+:   :+:+:   :+: :+:    :+:");
-	DelayText(10, "    +:+    +:+        +:+         +:+   +:+  :+:+:+  +:+ +:+    +:+");
-	DelayText(10, "    +#+    +#++:++#++ +#+        +#++:++#++: +#+ +:+ +#+ +#+    +:+");
-	DelayText(10, "    +#+           +#+ +#+        +#+     +#+ +#+  +#+#+# +#+    +#+");
-	DelayText(10, "    #+#    #+#    #+# #+#        #+#     #+# #+#   #+#+# #+#    #+#");
-	DelayText(10, "########### ########  ########## ###     ### ###    #### #########\n");
+	DelayText(5, "\t::::::::::: ::::::::  :::            :::     ::::    ::: :::::::::");
+	DelayText(5, "\t    :+:    :+:    :+: :+:          :+: :+:   :+:+:   :+: :+:    :+:");
+	DelayText(5, "\t    +:+    +:+        +:+         +:+   +:+  :+:+:+  +:+ +:+    +:+");
+	DelayText(5, "\t    +#+    +#++:++#++ +#+        +#++:++#++: +#+ +:+ +#+ +#+    +:+");
+	DelayText(5, "\t    +#+           +#+ +#+        +#+     +#+ +#+  +#+#+# +#+    +#+");
+	DelayText(5, "\t    #+#    #+#    #+# #+#        #+#     #+# #+#   #+#+# #+#    #+#");
+	DelayText(5, "\t########### ########  ########## ###     ### ###    #### #########\n");
 	cout << Name << " was standing near the edge of the cliff near the ocean, thinking and wondering, wondering if anyone is out there looking for them.Listening to the calming sounds of the sea crashing into the sides of the cliff and ";
 	cout << "rocks below.thinking of reasons why " << gender << " loved the ocean.How the water can be very devastating one minute then calming the next; it’s one of the things" << gender << "loves about the deep - sea. " << gender << " experienced this all firsthand three days";
 	cout << "ago. " << Name << " and " << gender2 << " family set out into the ocean and everything was calm, the only sound being the seagulls flying up above and the salty waves gently moving the boat up and down.After an hour, the skies became dark and the waves started";
@@ -272,7 +275,7 @@ void Island(std::string & Name, std::string & gender, std::string & gender2, std
 		{
 		case '1':
 			//starts feeling a headeche and pain in joints
-			MainMenu(Name, gender, gender2, gender3, sibling, sAge);
+			MainMenu(Name, gender, gender2, gender3, sibling, sAge, Secret, Secret2);
 			menu = false;
 			break;
 		case '2':
@@ -294,7 +297,7 @@ void Island(std::string & Name, std::string & gender, std::string & gender2, std
 	cout << "greeted by " << gender2 << " family. " << gender2 << " mother handed " << gender2 << " a piece of the fish they caught as " << gender2 << " dad asked if " << gender << " saw any rescue, " << gender << " shook " << gender2 << " head as " << gender << " bit into the fish. Once they had finished, " << gender2 << " and " << gender2 << sAge << sibling << " decided to play around in the ";
 	cout << "woods. As they were running pass the trees and over the fallen logs, they both came across a small area of water with vines hanging from a nearby tree and completing the scene was a cool, misty waterfall. they looked at each other and smiled, deciding ";
 	cout << "to play in the water. although the place was not like the ocean, it still had its own charm.\n";
-	DelayText (50, "                       | 1: run to water|---------| 2: grab onto vines|\n");
+	DelayText (20, "                       | 1: run to water|---------| 2: grab onto vines|\n");
 	while (menu == true && enterStory == false)
 	{
 		cin >> user;
@@ -305,7 +308,7 @@ void Island(std::string & Name, std::string & gender, std::string & gender2, std
 			//struggles to run into water, while compulsivly laughing 
 			//MRI
 			pausing();
-			MainMenu(Name, gender, gender2, gender3, sibling, sAge);
+			MainMenu(Name, gender, gender2, gender3, sibling, sAge, Secret, Secret2);
 			menu = false;
 			break;
 		case '2':
@@ -327,7 +330,7 @@ void Island(std::string & Name, std::string & gender, std::string & gender2, std
 	cout << Name << ", grabbed ahold of one of the vines, took a few steps back and ran towards the edge and flung " << gender3 << " into the water. " << gender2 << "  " << sibling << " just ran into to water and swam towards " << Name << ".After a few minutes, a splash war had broken out between the two, " << Name << " was winning. ";
 	cout << "With " << Name << "’s overwhelming number of splashes " << gender << " pushed " << gender2 << sAge << " reletive towards the waterfall where he tripped over a rock, falling through the wall of water.Concerned," << Name << " ran through the waterfall to find a small, dark cave. " << gender2 << " and " << gender2 << sibling << " looked around, finding ";
 	cout << "writing on the walls.the writing on the wall said, 'they are dead, all of them' with tally marks next it\n.";
-	DelayText (50, "                       | 1: stay in the cave|---------| 2: leave|\n");
+	DelayText (20, "                       | 1: stay in the cave|---------| 2: leave|\n");
 	while (menu == true && enterStory == true)
 	{
 
@@ -340,7 +343,7 @@ void Island(std::string & Name, std::string & gender, std::string & gender2, std
 		    //player sits down, unable to move, her body trembling and moving on it's own
 			//hospital sounds
 			pausing();
-			MainMenu(Name, gender, gender2, gender3, sibling, sAge);
+			MainMenu(Name, gender, gender2, gender3, sibling, sAge, Secret, Secret2);
 			menu = false;
 			break;
 		case '2':
@@ -363,7 +366,7 @@ void Island(std::string & Name, std::string & gender, std::string & gender2, std
 	cout << "\t" << gender << " looked out towards the ocean, seeing the reflection of the moon in the water and the light bouncing off the surface. " << Name << " backed up a few feet and went into a full - on sprint towards the edge.The feeling of the air rushed past her, making " << gender2 << " heart beat quicken as " << gender << " fell towards the ";
 	cout << "water.Once " << gender << " was under the water " << gender << " opened " << gender2 << " eyes, seeing all kinds of aquatic creatures swimming around.but what was even better was the rays of the moon breaking through the surface of the water made the whole experience better. " << Name << " went to the surface for air, the waves pushed " << gender2 << " up ";
 	cout << "and down, and " << gender << " dived back into the water.The water was so dark and mysterious, full of beauty and danger. " << Name << " started to swim deeper down, but " << gender2 << " small body could not handle the pressure of the water, so " << gender << " had to go back up once more\n";
-	DelayText (50, "                       | 1: continue swimming|---------| 2: Go back to bed|\n");
+	DelayText (20, "                       | 1: continue swimming|---------| 2: Go back to bed|\n");
 	while (menu == true && enterStory == false)
 	{
 
@@ -376,7 +379,7 @@ void Island(std::string & Name, std::string & gender, std::string & gender2, std
 			
 			//player drowns 
 			pausing();
-			MainMenu(Name, gender, gender2, gender3, sibling, sAge);
+			MainMenu(Name, gender, gender2, gender3, sibling, sAge, Secret, Secret2);
 			menu = false;
 			break;
 		case '2':
@@ -397,7 +400,7 @@ void Island(std::string & Name, std::string & gender, std::string & gender2, std
 	cout << "After a relaxing swim, Cara headed back towards the shelter to get a good night’s rest. " << gender << " laid down on the ground, pulling " << gender2 << " animal skin covers over " << gender2 << " and drifted off the sleep.The next morning, " << gender << " woke up to smell of cooked fish. " << Name << " walked out to where " << gender2 << " family ate, but they had already ";
 	cout << "left to go hunting, so " << gender << " just ate what they left for " << gender2 << " and went back to the cliff.There was a gentle breeze as " << gender << " walked up the hill. " << gender << " smelled the salt water as " << gender << " neared the edge of the cliff.Once " << gender << " reached the edge " << Name << " stood there, looking out towards the water, seeing the fish hop in and ";
 	cout << "out of the ocean. " << gender2 << " eyes closed and " << gender << " listened to the sound of the seagulls and the waves hitting the rocks.An hour has past when the sound of the tide changed, causing " << Name << " to open " << gender2 << " eyes to see a rescue ship head " << gender2 << " direction.\n";
-    DelayText (50, "                       | 1: Greet|---------| 2: Hide|\n");
+    DelayText (20, "                       | 1: Greet|---------| 2: Hide|\n");
 	while (menu == true && enterStory == true)
 	{
 
@@ -415,7 +418,7 @@ void Island(std::string & Name, std::string & gender, std::string & gender2, std
 			iBattle(Name, gender, gender2, gender3, sibling, sAge);
 			//compulsive crying
 			pausing();
-			MainMenu(Name, gender, gender2, gender3, sibling, sAge);
+			MainMenu(Name, gender, gender2, gender3, sibling, sAge, Secret, Secret2);
 			menu = false;
 			break;
 		default:
@@ -431,6 +434,7 @@ void Island(std::string & Name, std::string & gender, std::string & gender2, std
 	}
 	cout << Name << " ran towards the shelter to see if here parents and " << sAge << sibling << " were there.Once " << gender << " got there " << gender << " saw that they were still gone, so " << gender << " started the fire, making sure it the ship could see it.once finished, " << Name << " headed towards the shore to greet them.\n";
 	DelayText(20, "                             | Back to main menu|\n");
+	Secret2 = true;
 	while (menu == true && enterStory == false)
 	{
 
@@ -440,7 +444,7 @@ void Island(std::string & Name, std::string & gender, std::string & gender2, std
 		case '1':
 			Clearing();
 			pausing();
-			MainMenu(Name, gender, gender2, gender3, sibling, sAge);
+			MainMenu(Name, gender, gender2, gender3, sibling, sAge, Secret, Secret2);
 			menu = false;
 			break;
 		default:

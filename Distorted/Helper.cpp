@@ -72,11 +72,17 @@ void pausing()
 
 }
 
-void MainMenu(std::string & Name, std::string & gender, std::string & gender2, std::string & gender3, std::string &sibling, std::string &sAge)
+void MainMenu(std::string & Name, std::string & gender, std::string & gender2, std::string & gender3, std::string &sibling, std::string &sAge, bool &Secret, bool &Secret2)
 {
 	char user;
 	bool Exit = false;
 	Clearing();
+	cout << "   .#####..######..####..######..####..#####..######.######..####..##..##.\n";
+	cout << "   .##..##...##...##.......##...##..##.##..##...##.....##...##..##.###.##.\n";
+	cout << "   .##..##...##....####....##...##..##.#####....##.....##...##..##.##.###.\n";
+	cout << "   .##..##...##.......##...##...##..##.##..##...##.....##...##..##.##..##.\n";
+	cout << "   .#####..######..####....##....####..##..##...##...######..####..##..##.\n";
+	cout << "   .......................................................................\n";
 	bool options = false;
 	DelayText(10, "                     |--------------|Main Menu|-------------|");
 	cout <<  "                     |                                      |\n";
@@ -96,11 +102,16 @@ void MainMenu(std::string & Name, std::string & gender, std::string & gender2, s
 		case '1':
 			Clearing();
 			DelayText(20, "1: The Pheonix:");
-			DelayText(21, "Inspired by a dream you go out and burn a forest down, not longer after you\nare greeted by a bird made of flames");
+			DelayText(19, "Inspired by a dream you go out and burn a forest down, not longer after you\nare greeted by a bird made of flames");
 			cout << "------------------------\n";
 			DelayText(20, "2: Island");
-			DelayText(21, "Stranded on an island whith your family but it's okay since there is plenty of\nfood and you can hear the ocean.");
+			DelayText(19, "Stranded on an island whith your family but it's okay since there is plenty of\nfood and you can hear the ocean.");
 			cout << "------------------------\n";
+			if (Secret == true && Secret2 == true)
+			{
+				DelayText(20, "3: Secret");
+			}
+			cout << "[B]ack to main menu\n";
 			options = true;
 			Exit = true;
 			break;
@@ -111,13 +122,20 @@ void MainMenu(std::string & Name, std::string & gender, std::string & gender2, s
 	}
 	while (options == true)
 	{
-		cin >> user;
-		Clearing();
 		switch (user)
 		{
+		case 'b':
+			MainMenu(Name, gender, gender2, gender3, sibling, sAge, Secret, Secret2);
+			break;
 		default:
 		case 'r':
-			cout << " Invalid -.-\n";
+			DelayText(20, "1: The Pheonix:");
+			DelayText(19, "Inspired by a dream you go out and burn a forest down, not longer after you\nare greeted by a bird made of flames");
+			cout << "------------------------\n";
+			DelayText(20, "2: Island");
+			DelayText(19, "Stranded on an island whith your family but it's okay since there is plenty of\nfood and you can hear the ocean.");
+			cout << "------------------------\n";
+			cout << user << " is invalid\n";
 			break;
 		case '1':
 			askInput(Name, gender, gender2, gender3);
@@ -125,7 +143,7 @@ void MainMenu(std::string & Name, std::string & gender, std::string & gender2, s
 			cout << "                                    Name   : " << Name << "\n";
 			cout << "                                    Pronoun: " << gender << ", " << gender2 << ", " << gender3 << "\n";
 			pausing();
-			ThePhoenix(Name, gender, gender2, gender3, sibling, sAge);
+			ThePhoenix(Name, gender, gender2, gender3, sibling, sAge,Secret,Secret2);
 			options = false;
 			break;
 		case '2':
@@ -136,9 +154,45 @@ void MainMenu(std::string & Name, std::string & gender, std::string & gender2, s
 			cout << "                                    Reletive    : " << sibling << "\n";
 			cout << "                                    Reletive Age: " << sAge << "\n";
 			pausing();
-			Island(Name, gender, gender2, gender3, sibling, sAge);
+			Island(Name, gender, gender2, gender3, sibling, sAge, Secret, Secret2);
 			options = false;
+			break;
+		case '3':
+			if (Secret == true && Secret2 == true)
+			{
+				cout << "Distortion\n";
+				DelayText(10, "Though the hallucinations,");
+				DelayText(10, "In a world made from my mind,");
+				DelayText(10, "We stand on our last foundations");
+				DelayText(10, "As we leave everything behind.");
+				cout << "\n\n";
+				DelayText(10, "Thinking everything is fine,");
+				DelayText(10, "believing nothing has happened,");
+				DelayText(10, "we slowly reach our deadline");
+				DelayText(10, "with chaotic laughing.");
+				cout << "\n\n";
+				DelayText(10, "I have eaten my family,");
+				DelayText(10, "I have burned down a forest,");
+				DelayText(10, "It was a catastrophe,");
+				DelayText(10, "My result was horrid.");
+				cout << "\n\n";
+				DelayText(10, "we will never wake");
+				DelayText(10, "leaving it as a mistake");
+				pausing();
+				MainMenu(Name, gender, gender2, gender3, sibling, sAge, Secret, Secret2);
+			}
+			else
+			{
+				DelayText(20, "1: The Pheonix:");
+				DelayText(19, "Inspired by a dream you go out and burn a forest down, not longer after you\nare greeted by a bird made of flames");
+				cout << "------------------------\n";
+				DelayText(20, "2: Island");
+				DelayText(19, "Stranded on an island whith your family but it's okay since there is plenty of\nfood and you can hear the ocean.");
+				cout << "------------------------\n";
+				cout << user << " is invalid\n";
+			}
 		}
+		
 	}
 
 	
